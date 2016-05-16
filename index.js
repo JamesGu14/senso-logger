@@ -7,6 +7,9 @@ var mv = require('mv');
 
 
 var today = new Date();
+// let basePath = __dirname;
+var path = require('path');
+var basePath = path.dirname(require.main.filename);
 
 /** 
  Logging Folder Structure
@@ -111,7 +114,7 @@ function checkIfMonthFolderIsArchived(callback) {
 	}
 }
 
-module.exports = function(basePath, msg) {
+module.exports = function(msg) {
 	checkIfLogFolderExists(function(res) {
 		if(res) {
 			checkIfArchiveFolderExists(function(res) {
