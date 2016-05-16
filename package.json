@@ -1,0 +1,28 @@
+{
+  "name": "senso-logger",
+  "version": "1.0.0",
+  "description": "Easy logger for web projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesGu14/senso-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "web"
+  ],
+  "author": "James Gu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesGu14/senso-logger/issues"
+  },
+  "homepage": "https://github.com/JamesGu14/senso-logger#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "mkdirp": "^0.5.1",
+    "mv": "^2.1.1"
+  }
+}
