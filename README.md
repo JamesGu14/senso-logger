@@ -7,8 +7,10 @@ Features:
 3. 
 
 Install module:
-  
+
+```js  
   npm install --save senso-logger
+```
 
 Basic syntax:
 
@@ -19,7 +21,7 @@ Basic syntax:
 
  Logging Folder Structure
 
- 
+```js
  log
  |--Archive
         |--Jan
@@ -27,6 +29,6 @@ Basic syntax:
         |--Mar 
  |--Apr
  |--May
-
+```
 
 The above folder structure will be created automatically. 
