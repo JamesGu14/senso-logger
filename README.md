@@ -3,8 +3,8 @@ Easy adoption logger function for node.js projects.
 
 Features:
 1. Automatically create log folder in your node project.
-2. Archive files by date. 
-3. 
+2. Archive files by month. 
+3. Optional colored logs in console
 
 Install module:
 
@@ -12,7 +12,7 @@ Install module:
   npm install --save senso-logger
 ```
 
-Basic syntax:
+Syntax (see how easy it is!):
 
 ```js
   var log = require('log');

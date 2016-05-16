@@ -1,6 +1,6 @@
 {
   "name": "senso-logger",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Easy logger for web projects.",
   "main": "index.js",
   "scripts": {

@@ -21,7 +21,7 @@ var today = new Date();
  */
 
 function checkIfLogFolderExists(callback) {
-	let path = __dirname + '/log';
+	let path = basePath + '/log';
 
 	fs.access(path, fs.F_OK, function(err) {
 		if(!err) {
@@ -43,7 +43,7 @@ function checkIfLogFolderExists(callback) {
 }
 
 function checkIfArchiveFolderExists(callback) {
-	let path = __dirname + '/log/archived';
+	let path = basePath + '/log/archived';
 
 	fs.access(path, fs.F_OK, function(err) {
 		if(!err) {
@@ -66,7 +66,7 @@ function checkIfArchiveFolderExists(callback) {
 
 function checkIfMonthFolderExists(callback) {
 	var today = new Date();
-    var path = __dirname + '/log/' + today.getFullYear() + '_' + ((today.getMonth() + 1).length === 1 ? 
+    var path = basePath + '/log/' + today.getFullYear() + '_' + ((today.getMonth() + 1).length === 1 ? 
     	(today.getMonth() + 1) : ('0' + (today.getMonth() + 1)));
     fs.access(path, fs.F_OK, function(err) {
     	if(!err) {
@@ -95,9 +95,9 @@ function checkIfMonthFolderIsArchived(callback) {
 		let prevMonthPath = today.getFullYear() + '_' + (today.getMonth().length === 1 ? 
 	        	today.getMonth() : ('0' + today.getMonth()));
 
-		fs.access(__dirname + '/log/' + prevMonthPath, fs.F_OK, function(err) {
+		fs.access(basePath + '/log/' + prevMonthPath, fs.F_OK, function(err) {
 			if(!err) {
-				mv(__dirname + '/log/' + prevMonthPath, __dirname + '/log/archived/' + prevMonthPath, function(err) {
+				mv(basePath + '/log/' + prevMonthPath, basePath + '/log/archived/' + prevMonthPath, function(err) {
 					if(err) { 
 						console.log(err);
 						console.log('Archiving folder failed!'.red);
@@ -111,7 +111,7 @@ function checkIfMonthFolderIsArchived(callback) {
 	}
 }
 
-module.exports = function(msg) {
+module.exports = function(basePath, msg) {
 	checkIfLogFolderExists(function(res) {
 		if(res) {
 			checkIfArchiveFolderExists(function(res) {
@@ -139,7 +139,7 @@ function writeLog(msg) {
     	(today.getMonth() + 1) : ('0' + (today.getMonth() + 1)));
 	let dateFileName = ((today.getMonth() + 1).length === 1 ? 
     	(today.getMonth() + 1) : ('0' + (today.getMonth() + 1))) + '_' + today.getDate() + '.log';
-	let path = __dirname + '/log/' + monthPath + '/' + dateFileName;
+	let path = basePath + '/log/' + monthPath + '/' + dateFileName;
 
 	fs.access(path, fs.F_OK, function(err) {
 		if(err) {
