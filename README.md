@@ -12,8 +12,10 @@ Install module:
 
 Basic syntax:
 
+```js
+  var log = require('log');
   log('text you wanted to create');
-
+```
 
  Logging Folder Structure
 

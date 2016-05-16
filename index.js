@@ -111,7 +111,7 @@ function checkIfMonthFolderIsArchived(callback) {
 	}
 }
 
-module.exports.log = function(msg) {
+module.exports = function(msg) {
 	checkIfLogFolderExists(function(res) {
 		if(res) {
 			checkIfArchiveFolderExists(function(res) {
