@@ -15,7 +15,7 @@ Install module:
 Syntax (see how easy it is!):
 
 ```js
-  var log = require('log');
+  var log = require('senso-logger');
   log('text you wanted to create');
 ```
 
